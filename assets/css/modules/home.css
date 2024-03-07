@@ -1,0 +1,37 @@
+/* Main */
+.main{
+    flex: 1;
+}
+
+.section {
+    padding: 20px;
+}
+
+.section__title{
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+.section__img-container{
+    margin: 40px auto;
+    width: fit-content;
+    width: min(100%, 400px);
+}
+
+.img{
+    width: 100%;
+}
+
+.recipe__title{
+    margin: 20px 0;
+}
+
+.recipe__preparation{
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.recipe__ingredients{
+    margin-left: 30px;
+}
