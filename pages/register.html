@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta</title>
+    <script src="https://kit.fontawesome.com/d90748bc75.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/lib/animate.css/docs/animate.min.css">
+    <script src="../assets/js/lib/include-html/include-html.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <div data-include="../partials/header.html"></div>
+    
+    <main class="main">
+        <section class="section">
+            <h2 class="section__title">Registrate para subir tus recetas</h2>
+
+            <fieldset>
+                <legend>Formulario de registro</legend>
+                <form action="/pages/show_data.html" target="_blank">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name">
+                    <br>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido">
+                    <br>
+                    <label for="dateBirth">Fecha de nacimiento</label>
+                    <input type="date">
+                    <br>
+                    <label for="gender">Genero
+                        <input type="radio" name="gender" value="masculino">Masculino
+                        <input type="radio" name="gender" value="femenino">Femenino
+                        <input type="radio" name="gender" value="otro">Otro
+                    </label>
+                    <br>
+                    <label for="studies">Estudios
+                        <input type="checkbox" name="studies" value="Primario">Primario
+                        <input type="checkbox" name="studies" value="Secundario">Secundario
+                        <input type="checkbox" name="studies" value="Terciario">Terciario
+                        <input type="checkbox" name="studies" value="Universitarios">Universitarios
+                    </label>
+                    <br>
+                    <button class="section__button">Enviar</button>
+            </fieldset>
+                
+        </section>
+    </main>
+
+    <div data-include="../partials/footer.html"></div>
+    <script src="../assets/js/lib/wowjs/dist/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>

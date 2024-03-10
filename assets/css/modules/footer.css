@@ -4,3 +4,25 @@
     display: grid;
     place-items: center;
 }
+
+.footer__social-list{
+    display: flex;
+    gap: 10px;
+    font-size: 30px;
+}
+
+.footer__social-item{
+    list-style: none;
+}
+
+.footer__social-link{
+    display: inline-block;
+    text-decoration: none;
+    color: currentColor;
+    opacity: .7;
+
+    &:hover{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
