@@ -1,6 +1,7 @@
 .footer {
     padding: 10px;
-    min-height: 50px;
+    height: 200px;
+    min-height: 200px;
     display: grid;
     place-items: center;
 }
