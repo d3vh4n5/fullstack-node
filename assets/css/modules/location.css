@@ -1,0 +1,5 @@
+.section__iframe{
+    border: none;
+    aspect-ratio: 16/9;
+    width: min(100%, 500px);
+}
