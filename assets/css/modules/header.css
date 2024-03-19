@@ -4,6 +4,10 @@
     padding: 10px;
 }
 
+.header__marquee{
+    background-color: black;
+}
+
 .header__nav{
     margin: 0 auto;
     max-width: 800px;
