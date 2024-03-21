@@ -1,0 +1,180 @@
+---
+import { type Recipe } from '../../types/types'
+
+interface Props {
+	recipe: Recipe 
+}
+
+const { recipe } = Astro.props;
+---
+
+<div class="recipe-card" transition:name=`recipe ${recipe.id} box`>
+	<div class="recipe-card__img-container">
+		<img src={recipe.imgURL} alt="Food image" transition:name=`recipe ${recipe.id} img`>
+	</div>
+	<h2 class="recipe-card__title">{recipe.title}</h2>
+	<hr class="recipe-card__division-line">
+	<div class="recipe-card__descripction-container">
+		<input type="checkbox" name="card-check" id="card-check">
+		<header class="recipe-card__description-header">
+			<label class="recipe-card__button" for="card-check">
+				⇐
+			</label>
+			<h3 class="recipe-card__subtle">
+			</h3>
+			<label class="recipe-card__button" for="card-check">
+				⇒
+			</label>
+		</header>
+		<div class="recipe-card__ingredients">
+			<table class="ingredients-table">
+				<tr>
+					<th>Cantidad</th>
+					<th>Producto</th>
+				</tr>
+				{recipe.ingredients.map(i => (
+					<tr>
+						<td>{i.quantity}</td>
+						<td>{i.name}</td>
+					</tr>
+				))}
+				
+			</table>
+		</div>
+		<div class="recipe-card__preparation">
+			<p>
+				{recipe.preparation}
+			</p>
+		</div>
+	</div>
+</div>
+
+<style>
+	.recipe-card{
+		margin: 0 auto;
+		padding: 20px 30px;
+		background-color: orange;
+		border-radius: 0px 30px 0px 30px;
+		width: 400px;
+		height: 500px;
+		max-width: 400px;
+		color: rgb(82, 49, 9);
+	}
+
+	.recipe-card__img-container{
+		background: url('https://assets.elgourmet.com/wp-content/uploads/2023/03/strud_axYg39T1JkDQF4vh2Od5GRzweKHqVS-1024x683.png.webp');
+		background-size: cover;
+		background-position: center;
+		margin: 0 auto;
+		width: 50%;
+		aspect-ratio: 16/9;
+		border-radius: 20px;
+		overflow: hidden;
+		transition: width .2s;
+
+		&:hover{
+			cursor: pointer;
+			width: 90%;
+		}
+
+		&:hover ~ .recipe-card__descripction-container >.recipe-card__description-header {
+			height: 0;
+		}
+	}
+
+	.recipe-card__img-container img{
+		width: 100%;
+	}
+
+
+	.recipe-card__description-header {
+		height: 50px;
+		display: flex;
+		justify-content: space-between;
+		font-size: 30px;
+		font-weight: bold;
+		overflow: hidden;
+		transition: height .2s;
+	}
+
+	.recipe-card__button:hover{
+		cursor: pointer;
+	}
+
+	.recipe-card__subtle::after{
+		content: 'Ingredientes';
+	}
+
+	.recipe-card__ingredients{
+		opacity: 0;
+		transition: all .3s;
+		animation: fade 1s forwards;
+		height: 250px;
+		overflow-y: scroll;
+	}
+
+	.ingredients-table{
+		border-radius: 20px;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.ingredients-table td, .ingredients-table th{
+		padding: 4px 10px;
+		background-color: rgba(252, 252, 252, 0.2);
+		text-align: center;
+	}
+
+	.recipe-card__preparation{
+		height: 250px;
+		opacity: 0;
+		display: none;
+		transition: all .3s;
+		animation: fade 1s forwards;
+		overflow-y: scroll;
+	}
+
+	.recipe-card__preparation::-webkit-scrollbar, 
+	.recipe-card__ingredients::-webkit-scrollbar
+	{
+		background-color: transparent;
+		width: 10px;
+	}
+	.recipe-card__preparation::-webkit-scrollbar-thumb,
+	.recipe-card__ingredients::-webkit-scrollbar-thumb
+	{
+		background-color: currentColor;
+		border-radius: 10px;
+	}
+
+	#card-check {
+		display: none;
+	}
+
+	#card-check:checked ~ .recipe-card__description-header > .recipe-card__subtle::after {
+		content: 'Preparación';
+	}
+
+	#card-check:checked ~ .recipe-card__preparation {
+		display: block;
+	}
+
+	#card-check:checked ~ .recipe-card__ingredients {
+		display: none;
+	}
+
+	@keyframes fade {
+		to {
+			opacity: 1;
+		}
+	}
+
+
+	/* .link-card:is(:hover, :focus-within) {
+		background-position: 0;
+		background-image: var(--accent-gradient);
+	}
+	.link-card:is(:hover, :focus-within) h2 {
+		color: rgb(var(--accent-light));
+	} */
+</style>

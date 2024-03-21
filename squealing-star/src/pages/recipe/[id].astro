@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import BigCard from '../../components/recipes/BigCard.astro'
+import { recipes } from '../../data/recipes.data'
+
+
+const { id } = Astro.params
+/** Para que esto funcione, debo agregar el output: 'server' en
+ * la configuración de astro, esto hace que cada página se genere
+ * en el servidor al momento de consultarlo, lo que o hace más dinámico
+ * 
+ * export default defineConfig({
+        output: 'server'
+    });
+
+    La otra opcion es :
+
+    export function getStaticPaths(){
+        return allRecipes.map((recipe)=>({
+            params: {
+                id: recipe.id
+            }
+        }))
+    }
+
+    Esta ultima te genera una pagina por cada recipe, pero si sin muchas 
+    te genera muchisimas páginas
+ */
+
+ console.log(recipes.length)
+const recipe = recipes.find( recipe => recipe.id == id )
+---
+
+    {
+        recipe != undefined 
+        ? <Layout title=`Receta de ${recipe.title}`>
+                <main class="main">
+                    <BigCard recipe={recipe} />
+                    <div>
+                        <a class="btn" href="/">⇐ Volver</a>
+                    </div>
+                </main>
+            </Layout>
+            : <p>No se encuentra la receta</p>
+            
+            
+    }
+
+<style>
+    .btn{
+        margin-top: 50px;
+        display: inline-block;
+        background-color: aliceblue;
+        padding: 10px 30px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+    }
+</style>

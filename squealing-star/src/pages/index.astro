@@ -1,17 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro';
+import Card from '../components/recipes/Card.astro';
+import RecipeContainer from '../components/recipes/RecipeContainer.astro'
 ---
 
 <Layout title="Las recetas de Jan">
-	<Header />
 	<main class="main">
-		<h1>Armar contenido</h1>
+		<section>
+			<RecipeContainer />
+		</section>
 	</main>
-	<Footer />
 </Layout>
 
 <style>
+	section {
+		padding: 30px 0;
+	}
 </style>

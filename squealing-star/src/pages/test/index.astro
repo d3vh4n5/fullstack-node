@@ -3,9 +3,24 @@ import Layout from '../../layouts/Layout.astro'
 ---
 
 <Layout title="Welcome to Astro.">
-    
-    <h1>
-        Página de pruebas
-    </h1>
-
+    <main class="main">
+        <section class="section">
+            <h1 
+                class="shared-title"
+                transition:name="test subtle"
+                >subtitulo de pruebas</h1>
+                
+            <img 
+                src="https://d3vh4n5.com.ar/me.png" 
+                alt="Imagen de pruebas" 
+                width="200px"
+                transition:name="test image"
+            />
+            
+            
+            <p>
+                <a href="/test/transition">transision</a>
+            </p>
+        </section>
+    </main>
 </Layout>

@@ -1,3 +1,34 @@
+---
+type LinkItem = {
+    route: string
+    label: string
+}
+
+const LINKS: LinkItem[] = [
+    {
+        route: '/',
+        label: 'Inicio'
+    },
+    {
+        route: '/about',
+        label: 'Acerca de'
+    },
+    {
+        route: '/contact',
+        label: 'Contacto'
+    },
+    {
+        route: '/register',
+        label: 'Registrarse'
+    },
+    {
+        route: '/location',
+        label: 'Sucursales'
+    },
+]
+---
+
+
 <header class="header">
     <marquee behavior="" direction="" class="header__marquee">
         50% de descuento en el libo "Las mejores recetas de Juansito"
@@ -12,21 +43,11 @@
             <i class="fa-solid fa-x"></i>
         </label>
         <ul class="header__nav-list">
-            <li class="header__nav-item">
-                <a href="/index.html" class="header__nav-link">Home</a>
-            </li>
-            <li class="header__nav-item">
-                <a href="/pages/about.html" class="header__nav-link">Acerca de</a>
-            </li>
-            <li class="header__nav-item">
-                <a href="/pages/contact.html" class="header__nav-link">Contacto</a>
-            </li>
-            <li class="header__nav-item">
-                <a href="/pages/register.html" class="header__nav-link">Registrarse</a>
-            </li>
-            <li class="header__nav-item">
-                <a href="/pages/location.html" class="header__nav-link">Sucursales</a>
-            </li>
+            {LINKS.map( ({route, label}) => (
+                <li class="header__nav-item">
+                    <a href={route} class="header__nav-link">{label}</a>
+                </li>
+            ))}
         </ul>
     </nav>
     <label class="header__darkscreen" for="drawer"></label>

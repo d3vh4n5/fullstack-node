@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title='Sucursales'>
+
+<main class="main">
+    <section class="section">
+        <h2 class="section__title">Registrate para subir tus recetas</h2>
+
+        <fieldset class="register__fieldset">
+            <legend class="register__legend">Formulario de registro</legend>
+            <form action="/pages/show_data.html" target="_blank">
+                <label for="name">Nombre</label>
+                <input type="text" name="name">
+                <br>
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido">
+                <br>
+                <label for="dateBirth">Fecha de nacimiento</label>
+                <input type="date">
+                <br>
+                <label for="gender">Genero
+                    <input type="radio" name="gender" value="masculino">Masculino
+                    <input type="radio" name="gender" value="femenino">Femenino
+                    <input type="radio" name="gender" value="otro">Otro
+                </label>
+                <br>
+                <label for="studies">Estudios
+                    <input type="checkbox" name="studies" value="Primario">Primario
+                    <input type="checkbox" name="studies" value="Secundario">Secundario
+                    <input type="checkbox" name="studies" value="Terciario">Terciario
+                    <input type="checkbox" name="studies" value="Universitarios">Universitarios
+                </label>
+                <br>
+                <button class="section__button">Enviar</button>
+        </fieldset>
+            
+    </section>
+</main>
+
+</Layout>

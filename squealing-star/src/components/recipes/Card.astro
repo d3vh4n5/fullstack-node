@@ -1,0 +1,66 @@
+---
+import { type Recipe } from '../../types/types'
+
+interface Props {
+	recipe: Recipe 
+}
+
+const { recipe } = Astro.props;
+---
+
+<a 
+	class="recipe-card" 
+	href=`/recipe/${recipe.id}`
+	transition:name=`recipe ${recipe.id} box`
+>
+	<img class="recipe-card__img"  src={recipe.imgURL} alt="Food image" transition:name=`recipe ${recipe.id} img`>
+	<div class="description">
+		<h4 class="category">{recipe.category}</h4>
+		<h3 class="title">{recipe.title}</h3>
+	</div>
+</a>
+
+<style>
+	.recipe-card{
+		text-decoration: none;
+		margin: 0 auto;
+		background-color: orange;
+		border-radius: 0px 30px 0px 30px;
+		width: 220px;
+		height: 300px;
+		max-width: 400px;
+		color: rgb(82, 49, 9);
+		overflow: hidden;
+		
+		&:hover img{
+			transform: scale(1.06);
+		}
+	}
+	
+	.recipe-card__img{
+		transition: .3s;
+		width: 100%;
+		aspect-ratio: 16/12;
+		object-fit: fill;
+	}
+
+	.description{
+		padding: 10px;
+	}
+
+	.category{
+		color: rgb(27, 158, 9);
+		margin-bottom: 10px;
+	}
+
+
+
+
+	/* .link-card:is(:hover, :focus-within) {
+		background-position: 0;
+		background-image: var(--accent-gradient);
+	}
+	.link-card:is(:hover, :focus-within) h2 {
+		color: rgb(var(--accent-light));
+	} */
+</style>

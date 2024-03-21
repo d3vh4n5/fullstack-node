@@ -1,0 +1,20 @@
+---
+import Card from "./Card.astro";
+import { recipes } from '../../data/recipes.data'
+import { type Recipe } from "../../types";
+---
+
+<article>
+    {recipes.map((recipe: Recipe) => (
+        <Card recipe={recipe} />
+    ))}
+</article>
+
+<style>
+    article {
+        display: flex;
+        max-width: 1400px;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+</style>
