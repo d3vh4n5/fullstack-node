@@ -1,0 +1,146 @@
+<header class="header">
+    <marquee behavior="" direction="" class="header__marquee">
+        50% de descuento en el libo "Las mejores recetas de Juansito"
+    </marquee>
+    <label class="header__burger-button" for="drawer">
+        <i class="fa-solid fa-bars"></i>
+    </label>
+    <input class="header__responsive-checkbox" type="checkbox" name="drawer" id="drawer">
+    <nav class="header__nav">
+        <label class="header__close-button" for="drawer">
+            <!-- <i class="fa-solid fa-xmark"></i> -->
+            <i class="fa-solid fa-x"></i>
+        </label>
+        <ul class="header__nav-list">
+            <li class="header__nav-item">
+                <a href="/index.html" class="header__nav-link">Home</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="/pages/about.html" class="header__nav-link">Acerca de</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="/pages/contact.html" class="header__nav-link">Contacto</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="/pages/register.html" class="header__nav-link">Registrarse</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="/pages/location.html" class="header__nav-link">Sucursales</a>
+            </li>
+        </ul>
+    </nav>
+    <label class="header__darkscreen" for="drawer"></label>
+    <div class="header__brand">
+        <h1 class="header__brand-title">Recetas de cocina</h1>
+    </div>
+</header>
+<style>
+    /* header */
+
+.header {
+    padding: 10px;
+}
+
+.header__marquee{
+    background-color: black;
+}
+
+.header__nav{
+    margin: 0 auto;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.header__nav-list{
+    display: flex;
+    gap: 20px;
+}
+
+.header__nav-item{
+    list-style: none;
+}
+
+.header__nav-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-light);
+    display: inline-block;
+    border-radius: .5rem;
+    /* white-space: nowrap; */
+
+    &:hover{
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.header__brand-title{
+    text-align: center;
+}
+
+
+
+/*
+    Responsive mechanics
+*/
+
+.header__burger-button, .header__close-button{
+    display: none;
+}
+
+.header__responsive-checkbox {
+    display: none;
+}
+
+@media (max-width: 530px) {
+    .header__burger-button, .header__close-button{
+        border: 2px solid rgba(211, 211, 211, 0.384);
+        border-radius: 3px;
+        font-size: 20px;
+        display: grid;
+        place-items: center;
+        width: fit-content;
+        padding: 6px;
+    }
+
+    .header__nav{
+        position: fixed;
+        background-color: var(--color-primary);
+        left: -100%;
+        top: 0;
+        width: max(25%, 200px);
+        height: 100%;
+        padding: 10px;
+        transition: all .5s;
+        z-index: 100;
+    }
+
+    .header__nav-list{
+        flex-direction: column;
+    }
+    
+    .header__responsive-checkbox:checked ~ .header__nav {
+        left: 0;
+    }
+    .header__responsive-checkbox:checked ~ .header__darkscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vh;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 50;
+    }
+
+    .header__close-button{
+        color: red;
+        margin-bottom: 20px;
+        border: none
+    }
+
+    .header__nav-link{
+        padding: 10px;
+        width: 100%;
+    }
+}
+</style>
