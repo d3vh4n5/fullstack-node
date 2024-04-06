@@ -14,8 +14,18 @@
     --color-light: rgb(250,250,250);
     --color-papiro: rgb(243, 223, 186);
     --body-width: 1000px;
-    --gradient-background: 
+    /* --gradient-background: */
+
+    --blue: yellowgreen;
 }
+
+.blue-lighter { background: color-mix(in srgb, var(--blue), white 75%); }
+.blue-light   { background: color-mix(in srgb, var(--blue), white); }
+.blue         { background: var(--blue);}
+.blue-dark    { background: color-mix(in srgb, var(--blue), black 25%); }
+.blue-darker  { background: color-mix(in srgb, var(--blue), black); }
+
+
 
 /* Global application styles */
 

@@ -28,7 +28,8 @@ const { id } = Astro.params
  */
 
  console.log(recipes.length)
-const recipe = recipes.find( recipe => recipe.id == id )
+ const recipe = recipes.find(recipe => recipe.id.toString() === id)
+
 ---
 
     {

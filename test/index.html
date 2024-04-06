@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container > p{
+            color: red;
+        }
+
+        .container ~ div > p:last-child{
+            font-weight: 900;
+            color: green;
+        }
+        p {
+            transform: skewY(-30deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>Pruebas</h1>
+    <div class="otro">
+        <h2>Otro</h2>
+        <p>algo</p>
+        <p>algo</p>
+        <p>algo</p>
+    </div>
+    <div class="container">
+        <h2>container</h2>
+        <p>elemento</p>
+        <p>elemento</p>
+        <p>elemento</p>
+        <div>Elememnt</div>
+        <div>Elememnt</div>
+        <div>Elememnt</div>
+    </div>
+    <div class="otro">
+        <p>algo</p>
+        <p>algo</p>
+        <p>algo</p>
+        <h2>Otro</h2>
+    </div>
+    <div class="otro">
+        <p>algo</p>
+        <p>algo</p>
+        <h2>Otro</h2>
+        <p>algo</p>
+    </div>
+</body>
+</html>

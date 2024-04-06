@@ -2,4 +2,19 @@
     padding: 20px ;
     width: fit-content;
     margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.247);
+}
+
+label {
+    width: 50%;
+    /* background-color: red; */
+}
+
+input {
+    margin: 10px;
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
 }
